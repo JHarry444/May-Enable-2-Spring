@@ -12,7 +12,6 @@ public class MayEnable2ApiApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(MayEnable2ApiApplication.class, args);
 		System.out.println("Found the bean: " + context.getBean(DinoController.class));
-
 	}
 
 }

@@ -46,6 +46,11 @@ public class DinoController {
 		return this.service.getAll();
 	}
 
+	@GetMapping("/getDinoByName/{name}")
+	public Dinosaur getDinoByName(@PathVariable String name) {
+		return this.service.findByName(name);
+	}
+
 	@PostMapping("/createDino")
 	public ResponseEntity<Dinosaur> create(@RequestBody Dinosaur dino) {
 		System.out.println("Created: " + dino);
@@ -57,7 +62,7 @@ public class DinoController {
 	@PatchMapping("/updateDino/{id}")
 	public Dinosaur update(@PathVariable("id") int id, @PathParam("name") String name,
 			@PathParam("species") String species, @PathParam("age") Integer age) {
-		return this.update(id, name, species, age);
+		return this.service.update(id, name, species, age);
 	}
 
 	// id = 4494

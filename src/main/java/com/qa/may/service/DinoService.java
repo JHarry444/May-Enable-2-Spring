@@ -10,6 +10,8 @@ public interface DinoService {
 
 	List<Dinosaur> getAll();
 
+	Dinosaur findByName(String name);
+
 	Dinosaur create(Dinosaur dino);
 
 	Dinosaur update(int id, String name, String species, Integer age);

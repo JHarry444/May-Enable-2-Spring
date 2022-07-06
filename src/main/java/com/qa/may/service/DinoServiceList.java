@@ -3,13 +3,12 @@ package com.qa.may.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.qa.may.entity.Dinosaur;
 
 @Service
-@Primary
+
 public class DinoServiceList implements DinoService {
 
 	private List<Dinosaur> dinos = new ArrayList<>();
@@ -47,6 +46,12 @@ public class DinoServiceList implements DinoService {
 	@Override
 	public void delete(int id) {
 		this.dinos.remove(id);
+	}
+
+	@Override
+	public Dinosaur findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
