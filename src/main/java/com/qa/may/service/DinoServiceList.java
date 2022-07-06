@@ -22,8 +22,7 @@ public class DinoServiceList implements DinoService {
 
 	@Override
 	public List<Dinosaur> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.dinos;
 	}
 
 	@Override
@@ -35,14 +34,19 @@ public class DinoServiceList implements DinoService {
 
 	@Override
 	public Dinosaur update(int id, String name, String species, Integer age) {
-		// TODO Auto-generated method stub
-		return null;
+		Dinosaur toUpdate = this.dinos.get(id);
+		if (name != null)
+			toUpdate.setName(name);
+		if (age != null)
+			toUpdate.setAge(age);
+		if (species != null)
+			toUpdate.setSpecies(species);
+		return toUpdate;
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-
+		this.dinos.remove(id);
 	}
 
 }
