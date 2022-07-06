@@ -32,6 +32,14 @@ public class Dinosaur {
 		this.age = age;
 	}
 
+	public Dinosaur(Integer id, String name, String species, int age) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.species = species;
+		this.age = age;
+	}
+
 	// REQUIRED
 
 	public Integer getId() {
