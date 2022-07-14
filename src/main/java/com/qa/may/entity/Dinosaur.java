@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity // Table
 public class Dinosaur {
@@ -19,6 +20,9 @@ public class Dinosaur {
 	private String species;
 
 	private int age;
+
+	@ManyToOne
+	private Trainer trainer;
 
 	public Dinosaur() {
 		super();
@@ -72,6 +76,14 @@ public class Dinosaur {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	public Trainer getTrainer() {
+		return this.trainer;
+	}
+
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
 	}
 
 	@Override

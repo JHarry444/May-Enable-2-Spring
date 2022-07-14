@@ -16,15 +16,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.qa.may.dto.DinoDTO;
 import com.qa.may.entity.Dinosaur;
-import com.qa.may.service.DinoService;
+import com.qa.may.service.DinoServiceDB;
 
 @CrossOrigin
 @RestController
 public class DinoController {
 
 	@Autowired
-	private DinoService service; // dependency
+	private DinoServiceDB service; // dependency
 
 	@GetMapping("/hello")
 	public String helloWorld() {
@@ -44,7 +45,7 @@ public class DinoController {
 	}
 
 	@GetMapping("/getDinos")
-	public List<Dinosaur> getAll() {
+	public List<DinoDTO> getAll() {
 		return this.service.getAll();
 	}
 
