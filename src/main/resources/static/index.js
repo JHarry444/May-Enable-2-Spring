@@ -43,19 +43,22 @@ function renderDinos() {
                 dinoCard.appendChild(dinoDiv);
 
                 const dinoName = document.createElement("h2");
+                dinoName.classList.add("card-title");
                 dinoName.innerText = dino.name;
                 dinoDiv.appendChild(dinoName);
 
                 const dinoAge = document.createElement("p");
+                dinoAge.classList.add("card-text");
                 dinoAge.innerText = dino.age + " years old.";
                 dinoDiv.appendChild(dinoAge);
 
                 const dinoSpecies = document.createElement("p");
+                dinoSpecies.classList.add("card-text");
                 dinoSpecies.innerText = dino.species;
-                dinoSpecies.classList.add("btn", "btn-alert");
                 dinoDiv.appendChild(dinoSpecies);
 
                 const dinoDelete = document.createElement("button");
+				dinoDelete.classList.add("btn", "btn-danger");
                 dinoDelete.innerText = "DESTROY";
                 dinoDelete.addEventListener("click", function () {
                     deleteDino(dino.id);
